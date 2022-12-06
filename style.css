@@ -1,15 +1,60 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@500&display=swap");
 * {
   box-sizing: border-box; /*so padding and border doesnt effect the width and height of the element*/
 }
 
 body {
-  font-family: "Roboto", sand-serif;
   margin: 0;
+  width: 100%;
   min-height: 100vh; /* we need to assign a height so the items knows where to center*/
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /*so there are no scroll bars visible*/
+}
+.head {
+  display: flex;
+}
+h1 {
+  font-family: "Playfair Display", serif;
+  color: #ff5a1f;
+  font-size: 40px;
+}
+.quiz-container {
+  width: 600px;
+  margin-top: 30px;
+}
+h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+ul {
+  list-style: none;
+  font-family: "Playfair Display", serif;
+  padding: 20px;
+}
+ul li {
+  margin: 0.3rem;
+  font-size: 17px;
+}
+ul li label {
+  cursor: pointer;
+}
+button {
+  border: none;
+  background-color: #5a9cfa;
+  color: white;
+  display: block;
+  width: 200px;
+  font-size: 23px;
+  font-family: "Bebas Neue", cursive;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #051d59;
 }

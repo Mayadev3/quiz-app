@@ -12,10 +12,57 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>My Project</title>
+    <title>Quiz App</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <div class="head">
+      <iframe
+        src="https://giphy.com/embed/1sMGC0XjA1Hk58wppo"
+        width="160"
+        height="160"
+        frameborder="0"
+        class="giphy-embed"
+      ></iframe>
+      <h1>Quiz Your Tech-Self</h1>
+    </div>
+    <div class="quiz-container" id="quiz">
+      <div class="quiz-header">
+        <h2>Quiz question about tech?</h2>
+        <ul>
+          <li>
+            <input type="radio" name="answer" id="a" />
+            <!-- the name is important so we dont end up selecting more than one answer at once-->
+            <label for="a" id="a_text">Questions</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="b" />
+            <label for="b" id="b_text">Questions</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="c" />
+            <label for="c" id="c_text">Questions</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="d" />
+            <label for="d" id="d_text">Questions</label>
+          </li>
+          <li>
+            <input type="radio" name="answer" id="e" />
+            <label for="e" id="e_text">Questions</label>
+          </li>
+        </ul>
+      </div>
+      <button id="submit">Submit</button>
+    </div>
+
     <script src="/script.js"></script>
   </body>
 </html>
+<!--<iframe
+        src="https://giphy.com/embed/1sMGC0XjA1Hk58wppo"
+        width="200"
+        height="200"
+        frameborder="0"
+        class="giphy-embed"
+      ></iframe
+      >-->
