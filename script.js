@@ -34,11 +34,12 @@ const quizData = [
 ];
 
 const questionEl = document.getElementById("question");
-const answerEls = document.querySelectorAll(".answer");
+const answerEls = document.querySelectorAll(".answer"); //radio
 const a_text = document.getElementById("a_text");
 const b_text = document.getElementById("b_text");
 const c_text = document.getElementById("c_text");
 const d_text = document.getElementById("d_text");
+const submitBtn = document.getElementById("submit");
 
 let currentQuiz = 0; //the index of each quiz
 let score = 0;
@@ -55,5 +56,5 @@ function loadQuiz() {
 loadQuiz();
 
 function deselectAnswers() {
-  answerEls.forEach((answerEl) => (answerEl.checked = false));
+  answerEls.forEach((answerEl) => (answerEl.checked = false)); //start each radio type as being NOT checked
 }
