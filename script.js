@@ -32,7 +32,7 @@ const quizData = [
     correction: "b",
   },
 ];
-
+const quiz = document.getElementById("quiz");
 const questionEl = document.getElementById("question");
 const answerEls = document.querySelectorAll(".answer"); //radio
 const a_text = document.getElementById("a_text");
@@ -42,7 +42,7 @@ const d_text = document.getElementById("d_text");
 const submitBtn = document.getElementById("submit");
 
 let currentQuiz = 0; //the index of each quiz
-let score = 0;
+let score = 1;
 
 function loadQuiz() {
   deselectAnswers();
@@ -57,4 +57,36 @@ loadQuiz();
 
 function deselectAnswers() {
   answerEls.forEach((answerEl) => (answerEl.checked = false)); //start each radio type as being NOT checked
+}
+
+submitBtn.addEventListener("click", () => {
+  const answer =
+    getSelected(); /*when using an arrow function with the event listener, put it in a variable....
+  also know that in the event listener arrow function here we can create if/else statements as saying what to do with the results
+  of the getSelected function */
+  if (answer) {
+    if (answer === quizData[currentQuiz].correction) {
+      score++;
+    }
+    currentQuiz++;
+
+    if (currentQuiz < quizData.length) {
+      loadQuiz();
+    } else {
+      quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly!</h2>
+      <button onclick = "location.reload()">Reload </button>`;
+    }
+  }
+});
+
+function getSelected() {
+  let answer;
+
+  answerEls.forEach((answerEl) => {
+    if (answerEl.checked) {
+      answer = answerEl.id; // the id in the HTML.. so we are getting the id being a, b ,c or d to overlap it with those in the objects being a, b , c , d
+      console.log(answer);
+    }
+  });
+  return answer;
 }
