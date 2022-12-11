@@ -61,21 +61,19 @@ function deselectAnswers() {
 
 submitBtn.addEventListener("click", () => {
   const answer =
-    getSelected(); /*when using an arrow function with the event listener, put it in a variable....
-  also know that in the event listener arrow function here we can create if/else statements as saying what to do with the results
-  of the getSelected function */
-  if (answer) {
-    if (answer === quizData[currentQuiz].correction) {
-      score++;
-    }
-    currentQuiz++;
+    getSelected(); /*if you want to use the results of the getSelected funtion and use if/else conditions for those results,
+    then put the getSelected function in a variable and use this variable to create the if/else statements */
 
-    if (currentQuiz < quizData.length) {
-      loadQuiz();
-    } else {
-      quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly!</h2>
+  if (answer === quizData[currentQuiz].correction) {
+    score++;
+  }
+  currentQuiz++;
+
+  if (currentQuiz < quizData.length) {
+    loadQuiz();
+  } else {
+    quiz.innerHTML = `<h2>You answered ${score}/${quizData.length} questions correctly!</h2>
       <button onclick = "location.reload()">Reload </button>`;
-    }
   }
 });
 
