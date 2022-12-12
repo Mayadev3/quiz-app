@@ -68,7 +68,6 @@ submitBtn.addEventListener("click", () => {
     score++;
   }
   currentQuiz++;
-
   if (currentQuiz < quizData.length) {
     loadQuiz();
   } else {
