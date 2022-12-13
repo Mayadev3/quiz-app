@@ -32,6 +32,7 @@ const quizData = [
     correction: "b",
   },
 ];
+
 const quiz = document.getElementById("quiz");
 const questionEl = document.getElementById("question");
 const answerEls = document.querySelectorAll(".answer"); //radio
